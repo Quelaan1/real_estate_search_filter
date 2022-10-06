@@ -1,0 +1,22 @@
+.filter {
+}
+
+.filter__form {
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.filter__form-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+}
+
+.filter__form-submit {
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  background-color: #7065f0;
+}

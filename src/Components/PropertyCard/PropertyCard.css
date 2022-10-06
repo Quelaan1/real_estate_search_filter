@@ -1,0 +1,25 @@
+.property_card {
+  width: 361px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.property_card__image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 361px;
+  height: 205px;
+  margin-bottom: 25px;
+}
+
+.property_card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.property_card__details2 {
+  display: flex;
+  gap: 10px;
+}
