@@ -6,10 +6,11 @@ import './FavouriteButton.css';
 
 interface Props {
   property: Properties;
+  addFavourites: any;
 }
 
-export const PropertyCard: React.FC<Props> = ({ property }) => {
-  const {
+export const PropertyCard: React.FC<Props> = ({ property, addFavourites }) => {
+  let {
     imgUrl,
     isPopular,
     price,
@@ -25,6 +26,8 @@ export const PropertyCard: React.FC<Props> = ({ property }) => {
 
   const addFavourite = () => {
     setIsFavourite(!isFavoriteState);
+
+    !isFavoriteState && addFavourites(property);
   };
 
   return (

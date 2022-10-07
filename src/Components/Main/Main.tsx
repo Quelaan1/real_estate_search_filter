@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
+import { PropertyList } from '../PropertyList/PropertyList';
 import { Filter } from '../Filter/Filter';
 
 interface Props {
@@ -7,6 +8,13 @@ interface Props {
 }
 
 export const Main: React.FC<Props> = ({ properties }) => {
+  const [filteredProperties, setFilteredProperties] = useState();
+
+  const filterProperties = (input: any) => {
+    setFilteredProperties(() => input);
+    console.log(filteredProperties);
+  };
+
   return (
     <div className="main">
       <div className="main__header">
@@ -19,9 +27,14 @@ export const Main: React.FC<Props> = ({ properties }) => {
         </div>
       </div>
 
-      <Filter properties={properties} />
+      <Filter
+        properties={properties}
+        filterProperties={filterProperties}
+      />
 
-      
+      <PropertyList
+        properties={filteredProperties ? filteredProperties : properties}
+      />
     </div>
   );
 };

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-import { PropertyList } from '../PropertyList/PropertyList';
 
 import './Filter.css';
 
 interface Props {
   properties: Properties[];
+  filterProperties: Properties[] | any;
 }
 
-export const Filter: React.FC<Props> = ({ properties }) => {
+export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const formattedDate = moment(`${startDate}`).format('MM/DD/YYYY');
@@ -18,13 +18,11 @@ export const Filter: React.FC<Props> = ({ properties }) => {
   const [propertyType, setPropertyType] = useState('');
   let [filteredProperties, setFilteredProperties] = useState(properties);
 
-  const resetState = () => {
-    filteredProperties = properties;
-
-    filterer();
-  };
+  useEffect(() => filterProperties(filteredProperties));
 
   const filterer = () => {
+    filteredProperties = properties;
+
     if (startDate) {
       setFilteredProperties(
         filteredProperties.filter(
@@ -146,7 +144,7 @@ export const Filter: React.FC<Props> = ({ properties }) => {
                   type="submit"
                   onClick={(event) => {
                     event.preventDefault();
-                    resetState();
+                    filterer();
                   }}
                 >
                   Search
@@ -156,8 +154,6 @@ export const Filter: React.FC<Props> = ({ properties }) => {
           </ul>
         </form>
       </div>
-
-      <PropertyList properties={filteredProperties} />
     </>
   );
 };
