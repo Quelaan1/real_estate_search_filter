@@ -20,6 +20,8 @@ export const Main: React.FC<Props> = ({ properties }) => {
       </div>
 
       <Filter properties={properties} />
+
+      
     </div>
   );
 };

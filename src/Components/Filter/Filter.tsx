@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -11,20 +11,26 @@ interface Props {
 }
 
 export const Filter: React.FC<Props> = ({ properties }) => {
+  const initialState = properties;
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const formattedDate = moment(`${startDate}`).format('MM/DD/YYYY');
   const [price, setPrice] = useState('');
   const [propertyType, setPropertyType] = useState('');
-  const [filteredProperties, setFilteredProperties] = useState([...properties]);
+  let [filteredProperties, setFilteredProperties] = useState(properties);
 
-  function filterer() {
-    setFilteredProperties([...properties]);
-    console.log(propertyType);
+  const resetState = () => {
+    filteredProperties = properties;
 
+    console.log(filteredProperties, initialState);
+
+    filterer();
+  };
+
+  const filterer = () => {
     if (startDate) {
       setFilteredProperties(
-        properties.filter(
+        filteredProperties.filter(
           (property) =>
             !moment(`${formattedDate}`, 'MM/DD/YYYY').isBetween(
               moment(property.notAvailabeOn[0], 'MM/DD/YYYY'),
@@ -34,10 +40,17 @@ export const Filter: React.FC<Props> = ({ properties }) => {
       );
     }
 
+    if (location) {
+      setFilteredProperties((item) =>
+        item.filter((property) =>
+          property.location.toLowerCase().includes(location.toLowerCase())
+        )
+      );
+    }
+
     if (price) {
-      console.log(filteredProperties);
-      setFilteredProperties(
-        properties.filter(
+      setFilteredProperties((item) =>
+        item.filter(
           (property) =>
             property.price >= parseInt(price.split('-')[0]) &&
             property.price <= parseInt(price.split('-')[1])
@@ -45,20 +58,12 @@ export const Filter: React.FC<Props> = ({ properties }) => {
       );
     }
 
-    if (location) {
-      setFilteredProperties(
-        properties.filter((property) =>
-          property.location.toLowerCase().includes(location.toLowerCase())
-        )
-      );
-    }
-
     if (propertyType) {
-      setFilteredProperties(
-        properties.filter((property) => property.propertyType === propertyType)
+      setFilteredProperties((item) =>
+        item.filter((property) => property.propertyType === propertyType)
       );
     }
-  }
+  };
 
   return (
     <>
@@ -140,7 +145,7 @@ export const Filter: React.FC<Props> = ({ properties }) => {
                   type="submit"
                   onClick={(event) => {
                     event.preventDefault();
-                    filterer();
+                    resetState();
                   }}
                 >
                   Search
