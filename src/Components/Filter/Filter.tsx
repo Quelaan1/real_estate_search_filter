@@ -20,6 +20,7 @@ export const Filter: React.FC<Props> = ({ properties }) => {
 
   function filterer() {
     setFilteredProperties([...properties]);
+    console.log(propertyType);
 
     if (startDate) {
       setFilteredProperties(
@@ -44,17 +45,17 @@ export const Filter: React.FC<Props> = ({ properties }) => {
       );
     }
 
-    if (propertyType) {
-      setFilteredProperties(
-        properties.filter((property) => property.propertyType === propertyType)
-      );
-    }
-
     if (location) {
       setFilteredProperties(
         properties.filter((property) =>
           property.location.toLowerCase().includes(location.toLowerCase())
         )
+      );
+    }
+
+    if (propertyType) {
+      setFilteredProperties(
+        properties.filter((property) => property.propertyType === propertyType)
       );
     }
   }

@@ -7,14 +7,17 @@ export const Nav: React.FC = () => {
     return (
       <div className="nav">
         <div className="nav__left-items">
-          <div className="nav__logo">
+          <a
+            href="#"
+            className="nav__logo"
+          >
             <img
               className="nav__logo-image"
               src={logo}
               alt="logo"
             />
             <h1 className="nav__logo-name">Estatery</h1>
-          </div>
+          </a>
 
           <div className="nav__links">
             <a

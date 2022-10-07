@@ -37,6 +37,10 @@
   font-weight: 500;
 }
 
+.nav__links-item:focus {
+  color: #7065f0;
+}
+
 .nav__buttons {
   display: flex;
   gap: 20px;
