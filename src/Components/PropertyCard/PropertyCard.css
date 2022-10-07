@@ -2,6 +2,7 @@
   width: 361px;
   border-radius: 8px;
   background-color: #fff;
+  padding-bottom: 30px;
 }
 
 .property_card__image {
@@ -9,17 +10,63 @@
   border-top-right-radius: 8px;
   width: 361px;
   height: 205px;
-  margin-bottom: 25px;
 }
 
 .property_card__details {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0 15px;
+  padding: 0 25px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price__price {
+  color: #7065f0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.price__month {
+  color: #808494;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.fa-solid {
+  font-size: 16px;
+  color: #7065f0;
 }
 
 .property_card__details2 {
+  color: #808494;
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
-  gap: 10px;
+  gap: 30px;
+}
+
+.property_card__details-location {
+  color: #808494;
+  font-size: 15px;
+}
+
+hr {
+  border: 1px #f0effb solid;
+  border-top: 0px;
+  width: 100%;
+}
+
+.property_card__sparkle {
+  font-size: 16px;
+}
+
+
+
+.last_block {
+  display: flex;
+  gap: 5px;
 }

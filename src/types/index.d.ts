@@ -13,7 +13,7 @@ interface Properties {
   location: string;
   beds: number;
   bathrooms: number;
-  size: number;
+  size: string;
   propertyType: string;
   notAvailabeOn: string[];
 }

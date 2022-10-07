@@ -11,7 +11,6 @@ interface Props {
 }
 
 export const Filter: React.FC<Props> = ({ properties }) => {
-  const initialState = properties;
   const [location, setLocation] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const formattedDate = moment(`${startDate}`).format('MM/DD/YYYY');
@@ -21,8 +20,6 @@ export const Filter: React.FC<Props> = ({ properties }) => {
 
   const resetState = () => {
     filteredProperties = properties;
-
-    console.log(filteredProperties, initialState);
 
     filterer();
   };
@@ -112,7 +109,10 @@ export const Filter: React.FC<Props> = ({ properties }) => {
                   >
                     All price range
                   </option>
-                  <option value="500-2500">$500-$2,500</option>
+                  <option value="500-1000">$500-$1,000</option>
+                  <option value="1001-2500">$1000-$2,500</option>
+                  <option value="2501-4000">$2500-$4,000</option>
+                  <option value="4001-5500">$4000-$5,500</option>
                 </select>
               </li>
             </div>
@@ -132,8 +132,9 @@ export const Filter: React.FC<Props> = ({ properties }) => {
                   >
                     Select Property Type
                   </option>
-                  <option value="house">Houses</option>
-                  <option value="villa">Villas</option>
+                  <option value="house">House</option>
+                  <option value="villa">Villa</option>
+                  <option value="apartment">Apartment</option>
                 </select>
               </li>
             </div>
