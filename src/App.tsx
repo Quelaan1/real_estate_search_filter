@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import propertiesFromServer from './api/properties.json';
-import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Layout } from './pages/Layout';
 import { Home } from './pages/Home/Home';
 import { Rent } from './pages/Rent/Rent';
