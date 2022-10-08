@@ -11,7 +11,7 @@ interface Props {
 
 export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
   const [location, setLocation] = useState('');
-  const [startDate, setStartDate]: any = useState();
+  const [startDate, setStartDate]: any = useState(new Date());
   const formattedDate = moment(`${startDate}`).format('MM/DD/YYYY');
   const [price, setPrice] = useState('');
   const [propertyType, setPropertyType] = useState('');

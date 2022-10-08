@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import propertiesFromServer from './api/properties.json';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import { Layout } from './pages/Layout';
 import { Home } from './pages/Home/Home';
 import { Rent } from './pages/Rent/Rent';
@@ -29,7 +29,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter basename="/">
       <Routes>
         <Route
           path="/"
@@ -81,7 +81,7 @@ export const App: React.FC = () => {
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

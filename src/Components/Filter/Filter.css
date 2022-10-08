@@ -65,6 +65,5 @@
     no-repeat right white;
   background-size: 18px;
   background-position: bottom right;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
 }
