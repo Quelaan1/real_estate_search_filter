@@ -1,0 +1,7 @@
+.resources {
+  font-size: 34px;
+  display: flex;
+  padding: 15%;
+  justify-content: center;
+  text-transform: uppercase;
+}

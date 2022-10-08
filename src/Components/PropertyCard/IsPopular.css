@@ -1,0 +1,36 @@
+.is_popular > h3 {
+  width: 35%;
+  padding: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 0 8px 8px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+  left: -10px;
+}
+
+.is_popular > h3::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+}
+
+.is_popular > h3::before {
+  background-image: linear-gradient(135deg, transparent 50%, #7065f0 50%);
+}
+
+.is_popular > h3 {
+  background-color: #7065f0;
+}
+
+.is_popular_hidden {
+  opacity: 0;
+}
