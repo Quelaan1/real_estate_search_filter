@@ -1,0 +1,13 @@
+.favourites {
+  margin: 0 auto;
+  padding: 80px 20px 0;
+  max-width: 1144px;
+}
+
+.favourites__noFavourites {
+  font-size: 34px;
+  display: flex;
+  padding: 15%;
+  justify-content: center;
+  text-transform: uppercase;
+}

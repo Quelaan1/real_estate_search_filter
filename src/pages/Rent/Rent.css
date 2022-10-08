@@ -1,0 +1,28 @@
+.rent {
+  margin: 0 auto;
+  padding: 80px 20px 0;
+  max-width: 1183px;
+}
+
+.rent__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box select {
+  border: 1px solid hsla(245, 82%, 67%, 0.5);
+  color: #8e8b9d;
+  padding: 7px 28px 7px 7px;
+  border-radius: 4px;
+  font-size: 14px;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+  background: url('https://img.icons8.com/office/344/circled-chevron-down.png')
+    no-repeat right white;
+  background-size: 18px;
+  background-position-x: 98%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
