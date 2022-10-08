@@ -1,4 +1,4 @@
-![demo](https://imgur.com/4rXjSwL)
+![demo](https://imgur.com/4rXjSwL.png)
 
 ## 🛠 Installation & Set Up
 
