@@ -1,0 +1,69 @@
+.filter__form {
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 30px;
+  padding: 15px 35px;
+}
+
+.filter__form-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__form-submit {
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: white;
+  background-color: #7065f0;
+  cursor: pointer;
+}
+
+.filter__form-line {
+  border-left: 1px solid hsla(0, 0%, 50%, 0.2);
+  height: 43px;
+  width: 1px;
+}
+
+.form__input {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  border: none;
+  outline: none;
+}
+
+.form__input::placeholder {
+  color: black;
+}
+
+.form__title {
+  font-size: 14px;
+  color: grey;
+  cursor: context-menu;
+}
+
+.datepicker {
+  background: url('https://img.icons8.com/parakeet/344/experimental-calendar-parakeet.png')
+    no-repeat right white;
+  background-size: 18px;
+  background-position: bottom right;
+  cursor: context-menu;
+}
+
+.select_box select {
+  padding-right: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  left: -1px;
+  padding-top: 5px;
+  outline: none;
+  border: none;
+  background: url('https://img.icons8.com/office/344/circled-chevron-down.png')
+    no-repeat right white;
+  background-size: 18px;
+  background-position: bottom right;
+  appearance: none;
+}
