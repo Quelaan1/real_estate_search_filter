@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PropertyList.css';
 import { PropertyCard } from '../PropertyCard/PropertyCard';
 
