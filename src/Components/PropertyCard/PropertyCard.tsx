@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import './PropertyCard.css';
 import './IsPopular.css';
@@ -6,11 +6,15 @@ import './FavouriteButton.css';
 
 interface Props {
   property: Properties;
-  addFavourites: any;
+  manageFavouriteProperties: any;
 }
 
-export const PropertyCard: React.FC<Props> = ({ property, addFavourites }) => {
+export const PropertyCard: React.FC<Props> = ({
+  property,
+  manageFavouriteProperties,
+}) => {
   let {
+    id,
     imgUrl,
     isPopular,
     price,
@@ -22,12 +26,10 @@ export const PropertyCard: React.FC<Props> = ({ property, addFavourites }) => {
     size,
   } = property;
 
-  const [isFavoriteState, setIsFavourite] = useState(isFavorite);
 
-  const addFavourite = () => {
-    setIsFavourite(!isFavoriteState);
 
-    !isFavoriteState && addFavourites(property);
+  const manageFavourite = () => {
+    manageFavouriteProperties(id);
   };
 
   return (
@@ -56,12 +58,12 @@ export const PropertyCard: React.FC<Props> = ({ property, addFavourites }) => {
             <p className="price__month">/month</p>
             <button
               className={classNames(
-                { 'like liked': isFavoriteState },
-                { 'like unliked': !isFavoriteState }
+                { 'like liked': isFavorite },
+                { 'like unliked': !isFavorite }
               )}
               onClick={(event) => {
                 event.preventDefault();
-                addFavourite();
+                manageFavourite();
               }}
             >
               <span

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Nav.css';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import logo from '../../images/icons/logo.svg';
 
 export const Nav: React.FC = () => {
@@ -7,8 +8,8 @@ export const Nav: React.FC = () => {
     return (
       <div className="nav">
         <div className="nav__left-items">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="nav__logo"
           >
             <img
@@ -17,39 +18,45 @@ export const Nav: React.FC = () => {
               alt="logo"
             />
             <h1 className="nav__logo-name">Estatery</h1>
-          </a>
+          </Link>
 
           <div className="nav__links">
-            <a
+            <Link
               className="nav__links-item"
-              href="#"
+              to="rent"
             >
               Rent
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav__links-item"
-              href="#"
+              to="buy"
             >
               Buy
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav__links-item"
-              href="#"
+              to="sell"
             >
               Sell
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav__links-item"
-              href="#"
+              to="manage"
             >
               ManageProperty
-            </a>
-            <a
+            </Link>
+            <Link
               className="nav__links-item"
-              href="#"
+              to="resource"
             >
               Resources
-            </a>
+            </Link>
+            <Link
+              className="nav__links-item"
+              to="favourites"
+            >
+              Favourites
+            </Link>
           </div>
         </div>
 
