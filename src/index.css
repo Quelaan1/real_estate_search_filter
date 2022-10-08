@@ -1,5 +1,11 @@
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
+  background-color: #f8f7fd;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 

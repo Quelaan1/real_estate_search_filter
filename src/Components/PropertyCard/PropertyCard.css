@@ -1,8 +1,14 @@
 .property_card {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   width: 361px;
   border-radius: 8px;
   background-color: #fff;
   padding-bottom: 30px;
+  transition: transform 250ms;
+}
+
+.property_card:hover {
+  transform: scale(1.01);
 }
 
 .property_card__image {
@@ -63,8 +69,6 @@ hr {
 .property_card__sparkle {
   font-size: 16px;
 }
-
-
 
 .last_block {
   display: flex;

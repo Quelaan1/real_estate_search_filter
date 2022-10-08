@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import propertiesFromServer from './api/properties.json';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from './pages/Layout';
@@ -17,7 +16,7 @@ export const App: React.FC = () => {
 
   const [changes, setChanges] = useState(0);
 
-  useEffect(() => {}, [changes]);
+  useEffect(() => { }, [changes]);
 
   const manageFavouriteProperties = (input: any) => {
     setChanges((changes) => changes + 1);

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
-
 import './Filter.css';
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 
 export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
   const [location, setLocation] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate]: any = useState();
   const formattedDate = moment(`${startDate}`).format('MM/DD/YYYY');
   const [price, setPrice] = useState('');
   const [propertyType, setPropertyType] = useState('');
@@ -69,9 +68,10 @@ export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
         >
           <ul className="filter__form-list">
             <div>
-              <li>Location</li>
+              <li className="form__title">Location</li>
               <li>
                 <input
+                  className='form__input'
                   type="text"
                   name="Location"
                   id="location"
@@ -82,19 +82,25 @@ export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
               </li>
             </div>
 
+            <div className='filter__form-line'></div>
+
             <div>
-              <li>When</li>
+              <li className="form__title">When</li>
               <li>
                 <DatePicker
+                  placeholderText="Select Move-in Date"
+                  className="form__input datepicker"
                   selected={startDate}
                   onChange={(date: Date) => setStartDate(date)}
                 />
               </li>
             </div>
 
+            <div className='filter__form-line'></div>
+
             <div>
-              <li>Price</li>
-              <li>
+              <li className="form__title">Price</li>
+              <li className='select_box'>
                 <select
                   name="price"
                   id="price"
@@ -115,9 +121,11 @@ export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
               </li>
             </div>
 
+            <div className='filter__form-line'></div>
+
             <div>
-              <li>Proptery Type</li>
-              <li>
+              <li className="form__title">Proptery Type</li>
+              <li className='select_box'>
                 <select
                   name="propertyType"
                   id="propertyType"
@@ -137,20 +145,20 @@ export const Filter: React.FC<Props> = ({ properties, filterProperties }) => {
               </li>
             </div>
 
-            <div>
-              <li>
-                <button
-                  className="filter__form-submit"
-                  type="submit"
-                  onClick={(event) => {
-                    event.preventDefault();
-                    filterer();
-                  }}
-                >
-                  Search
-                </button>
-              </li>
-            </div>
+            <div className='filter__form-line'></div>
+
+            <li>
+              <button
+                className="filter__form-submit"
+                type="submit"
+                onClick={(event) => {
+                  event.preventDefault();
+                  filterer();
+                }}
+              >
+                Search
+              </button>
+            </li>
           </ul>
         </form>
       </div>
